@@ -2,7 +2,8 @@ version: "3.6"
 services:
   jupyter-8888:
     image: "tensorflow/tensorflow:latest-gpu-jupyter"
-    env_file: "env-file"
+    environment:
+      - JUPYTER_TOKEN=${ADMIN_PASSWORD}
     deploy:
       resources:
         reservations:
@@ -15,3 +16,4 @@ services:
     volumes:
       - ./workspace:/workspace
       - ./data:/data
+      - ./notebooks:/tf/notebooks
