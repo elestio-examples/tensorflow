@@ -1,0 +1,17 @@
+version: "3.6"
+services:
+  jupyter-8888:
+    image: "tensorflow/tensorflow:latest-gpu-jupyter"
+    env_file: "env-file"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: "nvidia"
+              count: all
+              capabilities: [gpu]
+    ports:
+      - 172.17.0.1:7654:8888
+    volumes:
+      - ./workspace:/workspace
+      - ./data:/data
