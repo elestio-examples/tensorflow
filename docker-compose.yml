@@ -1,7 +1,8 @@
 version: "3.6"
 services:
   jupyter-8888:
-    image: "tensorflow/tensorflow:latest-gpu-jupyter"
+    image: "tensorflow/tensorflow:${SOFTWARE_VERSION_TAG}"
+    restart: always
     environment:
       - JUPYTER_TOKEN=${ADMIN_PASSWORD}
     deploy:

@@ -9,17 +9,9 @@ ports:
     isAuth: false
 environments:
   - key: "SOFTWARE_VERSION_TAG"
-    value: "latest"
-  - key: "ADMIN_EMAIL"
-    value: "[EMAIL]"
+    value: "latest-gpu-jupyter"
   - key: "ADMIN_PASSWORD"
     value: "random_password"
-  - key: "DATABASE_PASSWORD"
-    value: "random_password"
-  - key: "DOMAIN"
-    value: "[CI_CD_DOMAIN]"
-  - key: "SMTP_FROM_EMAIL"
-    value: "[DOMAIN]@vm.elestio.app"
 config:
   runTime: "dockerCompose"
   version: ""
